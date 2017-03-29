@@ -2,16 +2,16 @@
 
 module.exports = app => {
   return class UserController extends app.Controller {
+    // User list page
     * index() {
-      const users = yield this.ctx.model.User.findAll({
-        attributes: [ 'name', 'email' ],
-      });
+      const users = yield this.ctx.service.user.all();
       this.ctx.body = users;
     }
 
+    // User page
     * show() {
-      const user = yield this.ctx.model.User.findByEmail('test1@test.com');
-      this.ctx.body = user;
+      const { params: { id }, service } = this.ctx;
+      this.ctx.body = yield service.user.find(id);
     }
   };
 };
