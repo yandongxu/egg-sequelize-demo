@@ -1,33 +1,15 @@
-# sequelize-demo
+# egg-sequelize-demo
 
 egg-sequelize-demo
 
-## QuickStart
+## Migrate
 
-<!-- add docs here for user -->
+- Use `npm run db:migrate:create migration-name` to create migration file
+- Use `npm run db:migrate` to migrate
+- Use `npm run db:migrate:rollback` to rollback migration
 
-see [egg docs][egg] for more detail.
+## Seed
 
-### Development
-```shell
-$ npm install
-$ npm run dev
-$ open http://localhost:7001/news
-```
-
-### Deploy
-
-Use `EGG_SERVER_ENV=prod` to enable prod mode
-
-```shell
-$ EGG_SERVER_ENV=prod npm start
-```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
-
-[egg]: https://eggjs.org
+- Use `npm run db:seed:create seed-name` to create seed file
+- Use `npm run db:seed` to add data
+- Use `npm run db:seed:rollback` to rollback seeds
